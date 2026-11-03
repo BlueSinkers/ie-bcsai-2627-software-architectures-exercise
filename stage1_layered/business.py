@@ -68,7 +68,7 @@ def place_order(book_id, quantity):
     }
     return persistence.save_order(order)
 
-
+  
 def get_order(order_id):
     order = persistence.find_order(order_id)
     if order is None:
