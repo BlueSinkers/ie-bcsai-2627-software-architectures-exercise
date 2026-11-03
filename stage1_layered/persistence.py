@@ -23,10 +23,7 @@ def save_book(title, price_cents, stock):
 
 
 def find_book(book_id):
-    if book_id in book:
-        return books[book_id]
-    else:
-        return None
+    return books.get(book_id)
 
 
 def all_books():
@@ -38,13 +35,11 @@ def update_stock(book_id, new_stock):
 
 
 def save_order(order):
-    # TODO step 1: give the order the next id, store it in `orders` and return it
-    orders[len(orders) + 1] = order
+    order_id = len(orders) + 1
+    order["id"] = order_id
+    orders[order_id] = order
+    return order
 
 
 def find_order(order_id):
-    # TODO step 1: return the order, or None if it does not exist
-    if order_id in orders:
-        return orders[order_id]
-    else:
-        return None
+    return orders.get(order_id)
